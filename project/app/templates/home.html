@@ -67,6 +67,9 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
+
+    <!-- CSS static-->
+    <link href="{% static 'css/home.css' %}" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -88,42 +91,95 @@
       </div>
     </div>
   </div>
-  <div id="navbar" class="navbar navbar-dark bg-dark shadow-sm">
+  <div id="navbar" class="navbar navbar-light" style="background-color: #F7A19F;">
     <a id="logo" href="{% url 'home' %}" class="navbar-brand align-self-center">
       <img src="{% static 'images/present.png' %}" width='35' height='35' alt="present.png">
-      <label class="navbar-brand align-self-center">mozuzi</label>
+      <label class="navbar-brand align-self-center">MOZUZI</label>
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
   </div>
 </header>
 
-<main role="main">
 
+
+<main role="main">
   <section class="jumbotron text-center">
     <div class="container">
       <h1>선물 고민, 이제 모주지가 있어요</h1>
-      <p class="lead text-muted">무슨 선물 주지 고민고민 하지마 주지 주지 모주지</p>
+      <p class="lead text-muted">무슨 선물 주지 고민고민 하지마 주지 주지 모주지 내가 대신 골라 주지 주지 MOZUZI</p>
       <p>
-        <a href="#" class="btn btn-secondary my-1">선물 고르러 go</a>
-        <a href="{% url 'introduce' %}" class="btn btn-outline-secondary">모주지에 대해 자세히 알아보기</a>
+        <a href="#" class="btn btn-outline-danger">선물 고르러 go</a>
+        <a href="{% url 'introduce' %}" class="btn btn-outline-primary">MOZUZI에 대해 자세히 알아보기</a>
       </p>
     </div>
   </section>
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/flower.jpg' %}" height='600' class="d-block w-100" alt="flower.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/flower2.jpg' %}" height='600' class="d-block w-100" alt="flower2.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/flower3.jpg' %}" height='600' class="d-block w-100" alt="flower3.jpg">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
   <div class="album py-5 bg-light">
     <div class="container">
-
       <div class="row">
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 상품 이미지"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">상품 이미지</text></svg>
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">상품 상세 설명</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">♥</small>
               </div>
             </div>
           </div>
